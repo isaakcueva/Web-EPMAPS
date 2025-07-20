@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>EPMAPS - Usuarios</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <script src="js/usuarios.js" defer></script>
+
+    
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">EPMAPS</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Inicio</a>
+
+                    <a href="service.html" class="nav-item nav-link">Servicios</a>
+                    
+                    
+                    <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Administración</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="usuarios.html" class="dropdown-item">Usuarios</a>
+                            <a href="servicios.html" class="dropdown-item">Servicios</a>
+                            <a href="pagos.html" class="dropdown-item">Pagos</a>
+                            <a href="notificaciones.html" class="dropdown-item">Notificaciones</a>
+                            <a href="administracion.html" class="dropdown-item">Estadísticas</a>
+                        </div>
+                    </div>
+                     <!-- Search Form Start -->
+                <form id="searchForm" class="form-inline ml-4">
+                    <input class="form-control mr-sm-2 rounded-pill search-input" type="search" placeholder="Buscar" aria-label="Buscar" id="searchInput">
+                    <button class="btn btn-outline-light my-2 my-sm-0 rounded-pill" type="submit">Buscar</button>
+                </form>
+                <!-- Search Form End -->
+                    <a href="cart2.html" class="nav-link">
+                        <i class="fa fa-shopping-cart active" aria-hidden="true"></i>
+                        <span class="counter" id="nro-productos"> 0</span>
+                    </a>
+                
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 100px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase"></h1>
+            <div class="d-inline-flex mb-lg-5">
+               
+            </div>
+        </div>
+    </div>
+
+ 
+    <!--------------CONTENIDO------------------------------------------------------------------------------------------------------>
+    <div class="container my-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 bg-light sidebar">
+                    <h4 class="text-center p-3">Menú CRUD</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" onclick="showSection('list')">
+                                <i class="fas fa-list"></i> Listar Clientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showSection('add')">
+                                <i class="fas fa-plus-circle"></i> Añadir Cliente
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- Contenido Principal -->
+                <div class="col-md-9">
+                    <!-- Sección Listar Clientes -->
+                    <div id="list" class="content-section">
+                        <h2>Clientes</h2>
+
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Cédula:</label>
+                                    <input type="text" id="searchId" class="form-control" style="width: 130px;"/>
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="margin-bottom: -34px;">
+                                <div class="form-group mb-lg-1">
+                                    <button class="btn btn-dark" onclick="getUsuarioById()">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <table class="table mt-2">
+                            <thead>
+                                <tr>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Dirección</th>
+                                    <th>Teléfono</th>
+                                    
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usuarioList"></tbody>
+                        </table>
+                        <nav class="d-flex justify-content-center">
+                            <ul class="pagination" id="pagination"></ul>
+                        </nav>
+                    </div>
+        
+                    <!-- Sección Añadir Cliente -->
+                    <div id="add" class="content-section" style="display: none;">
+                        <h2>Añadir Cliente</h2>
+                        <div class="mb-2">
+                            <label for="addId">Cédula:</label>
+                            <input type="text" id="addId" class="form-control mb-2">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addNombre">Nombre:</label>
+                            <input type="text" id="addNombre" class="form-control mb-2">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addEmail">Email:</label>
+                            <input type="email" id="addEmail" class="form-control mb-2">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addDireccion">Dirección:</label>
+                            <input type="text" id="addDireccion" class="form-control mb-2">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addTelefono">Teléfono:</label>
+                            <input type="text" id="addTelefono" class="form-control mb-2">
+                        </div>
+                        
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-success" onclick="addUsuario()">Crear</button>
+                                <button class="btn btn-secondary" onclick="showSection('list')">Regresar</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Sección Actualizar Cliente -->
+                    <div id="update" class="content-section" style="display: none;">
+                        <h2>Actualizar Cliente</h2>
+                        <label for="updateId">Cédula:</label>
+                        <input type="text" id="updateId" class="form-control mb-2" readonly>
+                        
+                        <label for="updateNombre">Nombre:</label>
+                        <input type="text" id="updateNombre" class="form-control mb-2">
+                        
+                        <label for="updateEmail">Email:</label>
+                        <input type="email" id="updateEmail" class="form-control mb-2">
+                        
+                        <label for="updateDireccion">Dirección:</label>
+                        <input type="text" id="updateDireccion" class="form-control mb-2">
+                        
+                        <label for="updateTelefono">Teléfono:</label>
+                        <input type="text" id="updateTelefono" class="form-control mb-2">
+                        
+                        
+                        
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-primary" onclick="updateUsuario()">Guardar</button>
+                                <button class="btn btn-secondary" onclick="showSection('list')">Regresar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección Ver Cliente -->
+                    <div id="view" class="content-section" style="display: none;">
+                        <h2>Ver Cliente</h2>
+                        <label for="viewId">Cédula:</label>
+                        <input type="text" id="viewId" class="form-control mb-2" readonly>
+                        
+                        <label for="viewNombre">Nombre:</label>
+                        <input type="text" id="viewNombre" class="form-control mb-2" readonly>
+                        
+                        <label for="viewEmail">Email:</label>
+                        <input type="email" id="viewEmail" class="form-control mb-2" readonly>
+                        
+                        <label for="viewDireccion">Dirección:</label>
+                        <input type="text" id="viewDireccion" class="form-control mb-2" readonly>
+                        
+                        <label for="viewTelefono">Teléfono:</label>
+                        <input type="text" id="viewTelefono" class="form-control mb-2" readonly>
+                        
+                        
+                        
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-secondary" onclick="showSection('list')">Regresar</button>
+                            </div>
+                        </div>
+                    </div>
+
+        
+                    <!-- Sección Eliminar Cliente -->
+                    <div id="delete" class="content-section" style="display: none;">
+                        <h2>Eliminar Cliente</h2>
+                        <p>¿Está seguro de que desea eliminar al siguiente cliente?</p>
+                        <div class="mb-2">
+                            <label for="deleteId">Cédula:</label>
+                            <input type="text" id="deleteId" class="form-control" readonly>
+                        </div>
+                        <div class="mb-2">
+                            <label for="deleteNombre">Nombre:</label>
+                            <input type="text" id="deleteNombre" class="form-control" readonly>
+                        </div>
+                        <div class="mb-2">
+                            <label for="deleteEmail">Email:</label>
+                            <input type="text" id="deleteEmail" class="form-control" readonly>
+                        </div>
+                        <div class="mb-2">
+                            <label for="deleteDireccion">Dirección:</label>
+                            <input type="text" id="deleteDireccion" class="form-control" readonly>
+                        </div>
+                        <div class="mb-2">
+                            <label for="deleteTelefono">Teléfono:</label>
+                            <input type="text" id="deleteTelefono" class="form-control" readonly>
+                        </div>
+                        
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-danger" onclick="deleteUsuario()">Eliminar</button>
+                                <button class="btn btn-secondary" onclick="showSection('list')">Regresar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--------------FIN DEL CONTENIDO------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!-- Footer Start -->
+<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+    <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contáctanos</h4>
+            <p><i class="fa fa-map-marker-alt mr-2"></i>Mariana de Jesús, Quito, Ecuador</p>
+            <p><i class="fa fa-phone-alt mr-2"></i>1800-242424</p>
+            <p class="m-0"><i class="fa fa-envelope mr-2"></i>atencion.cliente@aguaquito.gob.ec</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Síguenos</h4>
+            <p>En todas nuestras redes sociales oficiales</p>
+            <div class="d-flex justify-content-start">
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://x.com/aguadequito"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/AguadeQuito"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/company/epmaps-agua-de-quito/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/aguaquito/?hl=es"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horarios</h4>
+            <div>
+                <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                <p>8.00 AM - 5.00 PM</p>
+                <h6 class="text-white text-uppercase">Sábado</h6>
+                <p>8.00 PM - 12.00 PM</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Comunidad</h4>
+            <p>Mantente informado de todas las novedades</p>
+            <div class="w-100">
+                <div class="input-group">
+                    <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Correo">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary font-weight-bold px-3">Unirse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <p class="mb-2 text-white">2024 &copy; <a class="font-weight-bold" href="#"></a>EPMAPS</a></p>
+        
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- Scripts -->
+    <script src="Sources/js/cart.js" defer></script>
+    
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/broadcastHandler.js"></script>
+    <script src="js/cartService.js"></script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/search.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchForm').submit(function(event) {
+                event.preventDefault();
+                var searchInput = $('#searchInput').val().trim();
+                if (searchInput) {
+                    window.location.href = 'busqueda.html?query=' + encodeURIComponent(searchInput);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

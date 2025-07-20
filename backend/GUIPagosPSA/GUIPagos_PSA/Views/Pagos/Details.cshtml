@@ -1,0 +1,82 @@
+﻿@model GUIPagos_PSA.Models.Model_Pagos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Model_Pagos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaIdentidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CedulaIdentidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiciosID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiciosID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEmision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEmision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaVencimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PagosActivos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PagosActivos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_pago)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PagosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

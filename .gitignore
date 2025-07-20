@@ -1,0 +1,65 @@
+
+# === Visual Studio / C# (backend) ===
+
+# Archivos y carpetas del IDE
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.vsscc
+*.vspscc
+.vs/
+
+# Resultados de compilación y temporales
+[Bb]in/
+[Oo]bj/
+*.log
+*.tmp
+*.bak
+*.cache
+*.dbmdl
+*.pdb
+
+# Paquetes NuGet locales (opcional)
+packages/
+*.nupkg
+
+# IIS Express y configuraciones locales
+iisexpress/
+
+# Archivos de sistema operativo
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Otros
+*.db
+*.pid
+*.swp
+*.swn
+
+# === Frontend (web) ===
+
+# Node.js / npm / yarn (si usas algún paquete JS)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# EditorConfig y archivos del editor
+.editorconfig
+
+# Archivos de entorno (variables secretas)
+.env
+.env.*
+
+# Otros archivos ocultos o temporales
+*.local
+*.lock
+*.bak
+
+
+
+

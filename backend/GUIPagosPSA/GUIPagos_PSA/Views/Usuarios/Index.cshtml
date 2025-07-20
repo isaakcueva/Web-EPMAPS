@@ -1,0 +1,72 @@
+﻿@model IEnumerable<GUIPagos_PSA.Models.Model_Usuarios>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+
+
+<h2>Usuarios</h2>
+
+<div class="mb-3">
+    @using (Html.BeginForm("Index", "Usuarios", FormMethod.Get, new { @class = "form-inline" }))
+    {
+        <label for="cedula" class="sr-only">Cédula:</label>
+        @Html.TextBox("cedula", ViewBag.CedulaActual as string, new { @class = "form-control me-3", placeholder = "Buscar por cédula..." }) // Cambio de mr-2 a me-3 para más margen
+        <button type="submit" class="btn btn-secondary me-3">Buscar</button> // Agregado me-3 para más margen
+        @Html.ActionLink("Mostrar Todos", "Index", new { cedula = "" }, new { @class = "btn btn-secondary" })// El margen aquí no es necesario porque es el último elemento
+    }
+</div>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-secondary">Create New</a>
+</p>
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UsuarioActivo)
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UsuarioActivo)</td>
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = item.CedulaIdentidad })" class="btn btn-secondary">Edit</a>
+                            <a href="@Url.Action("Details", new { id = item.CedulaIdentidad })" class="btn btn-secondary">Details</a>
+                            <a href="@Url.Action("Delete", new { id = item.CedulaIdentidad })" class="btn btn-secondary">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No se encontraron usuarios.</p>
+}

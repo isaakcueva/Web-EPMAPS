@@ -1,0 +1,261 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Start Top Nav -->
+<!-- Close Top Nav -->
+<!-- Header -->
+<link rel="stylesheet" href="~/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/custom.css" />
+<link rel="stylesheet" href="~/css/fontawesome.css" />
+<link rel="stylesheet" href="~/css/fontawesome.min.css" />
+<link rel="stylesheet" href="~/css/slick-theme.css" />
+<link rel="stylesheet" href="~/css/slick-theme.min.css" />
+<link rel="stylesheet" href="~/css/slick.min.css" />
+<link rel="stylesheet" href="~/css/templatemo.css" />
+<link rel="stylesheet" href="~/css/templatemo.min.css" />
+<!-- Close Header -->
+<!-- Modal -->
+<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                <button type="submit" class="input-group-text bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Start Banner Hero -->
+<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/img/logoDMQ.png" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left align-self-center">
+                            <h1 class="h1 text-success"><b>AGUA</b> para Todos</h1>
+                            <h3 class="h2">Accede a los servicios de la empresa de Agua Potable</h3>
+                            <p>
+                                Desde la facilidad de tu hogar. Accede a servicios del DMQ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/img/logodmq2.png" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Una ayuda para no salir de casa</h1>
+                            <h3 class="h2">Crea tu cuenta y paga tus servicios</h3>
+                            <p>
+                                Diles a tus vecinos que ya hay una forma más facil de pagas el servicio
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/img/dmq3.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Ya no más filas</h1>
+                            <h3 class="h2">Olvidate de las largas filas y trámites complicados </h3>
+                            <p>
+                                Te brindamos la mejor asesoría para ayudarte con tus problemas potables
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+<!-- End Banner Hero -->
+<!-- Start Categories of The Month -->
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Elige tu Servicio</h1>
+            <p>
+                Todas las necesidades son atendidas en menos de 24 HORAS
+            </p>
+        </div>
+    </div>
+
+</section>
+<!-- End Categories of The Month -->
+<!-- Start Featured Product -->
+<section class="container mt-5 p-3">
+    <div class="row justify-content-between">
+        
+        <!-- Producto 1 -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="~/img/foto1.jpg" class="card-img-top" alt="Imagen del Producto 1">
+                    <h5 class="card-title">Consultas</h5>
+                    <p class="card-text">$50</p>
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(this.getAttribute('data-producto'))" data-producto='{"productoID":"1", "nombre":"Consultas", "precio":50}'>
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Producto 2 -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body" style="padding-top: 15px;">
+                    <img src="~/img/pago agua.jpeg" class="card-img-top" alt="Imagen del Producto 1">
+                    <h5 class="card-title">Pago Agua Potable</h5>
+                    <p class="card-text">$20</p>
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(this.getAttribute('data-producto'))" data-producto='{"productoID":"2", "nombre":"Pago Agua Potable", "precio":20}'>
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="~/img/Cambio-de-tuberías_7.jpg" class="card-img-top" alt="Imagen del Producto 1">
+                    <h5 class="card-title">Reparación</h5>
+                    <p class="card-text">$75</p>
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(this.getAttribute('data-producto'))" data-producto='{"productoID":"3", "nombre":"Reparacion", "precio":75}'>
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Reseñas</h1>
+                <p>
+                    Miles de personas del Distrito Metropolitano de Quito confian en la mejor empresa de agua potable 
+                    del Quito
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="~/img/galeria1.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">"El pago es más rápido"</a>
+                        <p class="card-text">
+                            Desde que conocí el servicio WEB del pago de agua potable, puedo atender mi negocio tranquilamente y no tengo que salir de casa.
+                        </p>
+                        <p class="text-muted">Reviews (24)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="~/img/yaruqui.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">"Barrios sin fugas"</a>
+                        <p class="card-text">
+                            El DQM atiende las problematicas de los moradores de las parroquias rurales y solventa dudas en menos de 24 horas.
+                        </p>
+                        <p class="text-muted">Reviews (48)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="~/img/galeria 3.jpeg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                            </li>
+                            
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Sin afectar la movilidad</a>
+                        <p class="card-text">
+                            Siempre el DQM ha buscado la manera de evitar afectar la movilidad de los Quiteños, brindando trabajaos rápidos y efectivos.
+                        </p>
+                        <p class="text-muted">Reviews (74)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

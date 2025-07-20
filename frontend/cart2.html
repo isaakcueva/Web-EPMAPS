@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPMAPS - Cart</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <script src="js/cart.js" defer></script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/search.js"></script>
+     <style>
+        .escondido {
+            display: none;
+        }
+    </style> 
+    
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">EPMAPS</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Inicio</a>
+                    <a href="service.html" class="nav-item nav-link">Servicios</a>
+                    <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Administración</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="usuarios.html" class="dropdown-item">Usuarios</a>
+                            <a href="servicios.html" class="dropdown-item">Servicios</a>
+                            <a href="pagos.html" class="dropdown-item">Pagos</a>
+                            <a href="notificaciones.html" class="dropdown-item">Notificaciones</a>
+                            <a href="administracion.html" class="dropdown-item">Estadísticas</a>
+                        </div>
+                    </div>
+
+                     <!-- Search Form Start -->
+                <form id="searchForm" class="form-inline ml-4">
+                    <input class="form-control mr-sm-2 rounded-pill search-input" type="search" placeholder="Buscar" aria-label="Buscar" id="searchInput">
+                    <button class="btn btn-outline-light my-2 my-sm-0 rounded-pill" type="submit">Buscar</button>
+                </form>
+                <!-- Search Form End -->
+                    <a href="cart.html" class="nav-link active">
+                        <i class="fa fa-shopping-cart active" aria-hidden="true"></i>
+                        <span class="counter" id="nro-productos">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 100px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase"></h1>
+            <div class="d-inline-flex mb-lg-5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Start -->
+    <div class="container mt-5 pt-5"> <!-- Added mt-5 and pt-5 to ensure content is below navbar -->
+        <section class="container" id="cart-container">
+            <div class="row p-3 g-4 justify-content-center">
+                <!-- Content goes here -->
+            </div>
+        </section>
+
+        <p id="carrito-vacio" class="text-center">¡Ups! Tu carrito está vacío, <a href="service.html">elige algunos servicios</a></p>
+
+        <form method="post">
+            <div id="hidden-section">
+                <input type="hidden" id="zapatosData" name="ZapatosData" />
+                <input type="hidden" id="subtotalData" name="SubtotalData" />
+                <section id="totales" class="d-flex flex-column align-items-center fw-bold">
+                    <p>Total Servicios: <span id="cantidad">0</span></p>
+                    <p>Total Precio: $<span id="precio">0</span></p>
+                    <article class="d-flex flex-column g-3 mb-3">
+                        <button type="button" class="mb-3 bg-success-subtle custom-btn fw-bold" id="comprar">Comprar</button>
+                        <button type="button" id="reiniciar" class="bg-cart custom-btn fw-bold">Reiniciar Carrito</button>
+                    </article>
+                </section>
+            </div>
+        </form>
+    </div>
+    <!-- Main Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contáctanos</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Mariana de Jesús, Quito, Ecuador</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>1800-242424</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>atencion.cliente@aguaquito.gob.ec</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Síguenos</h4>
+                <p>En todas nuestras redes sociales oficiales</p>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://x.com/aguadequito"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/AguadeQuito"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/company/epmaps-agua-de-quito/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/aguaquito/?hl=es"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horarios</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <p>8.00 AM - 5.00 PM</p>
+                    <h6 class="text-white text-uppercase">Sábado</h6>
+                    <p>8.00 PM - 12.00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Comunidad</h4>
+                <p>Mantente informado de todas las novedades</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Correo">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Unirse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">2024 &copy; <a class="font-weight-bold" href="#"></a>EPMAPS</a></p>
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/broadcastHandler.js"></script>
+    <script src="js/cartService.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("comprar").addEventListener("click", () => {
+            // Mostrar el modal para ingresar la cédula
+            const cedula = prompt("Por favor, ingresa tu cédula:");
+
+            // Verificar si se ingresó una cédula
+            if (cedula !== null && cedula !== "") {
+                var resultado = confirm("¿Está seguro de solicitar los servicios del carrito?");
+                if (resultado) {
+                    // Verificar si el estudiante existe en la base de datos
+                    $.ajax({
+                        url: `http://localhost:8083/api/usuario/Listar/${cedula}`,
+                        method: 'GET',
+                        success: function(estudiante) {
+                            // Verificar si el estudiante no es null
+                            if (!estudiante) {
+                                alert('El Usuario no existe en la base de datos.');
+                                return;
+                            }
+                            console.log('Estudiante:', estudiante);
+                            // Obtener los datos del carrito del localStorage
+                            const semestres = JSON.parse(localStorage.getItem("semestres"));
+
+                            // Verificar si hay productos en el carrito
+                            if (semestres && semestres.length > 0) {
+                                const estado = 'pendiente';
+                                const servicios= '1';
+                                const fechaPago = new Date().toISOString(); // Fecha actual en formato ISO
+                                
+                                
+                                let pagosRegistrados = 0; // Contador de pagos registrados
+
+                                semestres.forEach((producto, index) => {
+                                    const pago = {
+                                        CedulaIdentidad: cedula, // Usar la cédula como id_estudiante
+                                        ServiciosID:servicios,
+                                        FechaEmision: fechaPago,
+                                        FechaVencimiento: fechaPago,
+                                        MontoTotal: producto.precio,
+                                        
+                                        estado: estado
+                                    };
+                                    console.log('Pago:', pago);
+
+                                    // Enviar los datos del pago a la API de pagos usando AJAX
+                                    $.ajax({
+                                        url: 'http://localhost:8083/api/pagos/Insertar',
+                                        method: 'POST',
+                                        contentType: 'application/json',
+                                        data: JSON.stringify(pago),
+                                        success: function (data) {
+                                            console.log('Pago registrado con éxito:', data);
+                                            pagosRegistrados++;
+                                            if (pagosRegistrados === semestres.length) {
+                                                // Limpiar el localStorage si todos los pagos se registraron con éxito
+                                                localStorage.removeItem("semestres");
+                                                localStorage.removeItem("precio");
+                                                localStorage.removeItem("cedula");
+
+                                                // Mostrar un mensaje de éxito y redirigir a la página de inicio
+                                                alert('Compra realizada con éxito.');
+                                                window.location.href = '/compraCompleta.html';
+                                            }
+                                        },
+                                        error: function (error) {
+                                            console.error('Error al registrar el pago:', error);
+                                        }
+                                    });
+                                });
+                            } else {
+                                alert('No hay servicios en el carrito.');
+                            }
+                        },
+                        error: function() {
+                            alert('El estudiante no existe en la base de datos.');
+                        }
+                    });
+                }
+            } else {
+                // Si el usuario cancela o no ingresa la cédula, muestra un mensaje de error
+                alert("Debes ingresar tu cédula para realizar la compra.");
+            }
+        });
+    </script>
+
+<script>
+    $(document).ready(function() {
+        $('#searchForm').submit(function(event) {
+            event.preventDefault();
+            var searchInput = $('#searchInput').val().trim();
+            if (searchInput) {
+                window.location.href = 'busqueda.html?query=' + encodeURIComponent(searchInput);
+            }
+        });
+    });
+</script>
+</body>
+</html>

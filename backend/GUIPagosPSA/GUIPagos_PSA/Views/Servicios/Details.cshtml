@@ -1,0 +1,42 @@
+﻿@model GUIPagos_PSA.Models.Model_Servicios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Model_Servicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServicioActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServicioActivo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServiciosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

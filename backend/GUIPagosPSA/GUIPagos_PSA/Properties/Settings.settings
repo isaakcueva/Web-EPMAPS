@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GUIPagos_PSA.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GUIPagos_PSA_API_Usuarios_API_GestionUsuarios" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/API_GestionUsuarios.asmx</Value>
+    </Setting>
+    <Setting Name="GUIPagos_PSA_API_Servicios_API_GestionServicios" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/API_GestionServicios.asmx</Value>
+    </Setting>
+    <Setting Name="GUIPagos_PSA_API_Pagos_API_GestionPagos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/API_GestionPagos.asmx</Value>
+    </Setting>
+    <Setting Name="GUIPagos_PSA_API_Notificaciones_API_GestionNotificaciones" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/API_GestionNotificaciones.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
