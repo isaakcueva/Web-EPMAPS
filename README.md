@@ -5,22 +5,24 @@ Repositorio monorepo para la gestión de turnos y pagos de la Empresa Pública M
 ---
 
 ## 🗂️ Estructura del Proyecto
+
 WEB-EPMAPS/
 │
 ├── backend/                 # Backend C# (ASP.NET, n capas)
-│   ├── GUIPagosPSA.sln     # Archivo de solución
-│   └── GUIPagos_PSA/       # Proyecto principal
+│   ├── GUIPagesPSA.sln      # Archivo de solución
+│   └── GUIPages_PSA/        # Proyecto principal
 │
-├── frontend/               # Frontend web
-│   ├── css/               # Estilos CSS compilados
-│   ├── img/               # Recursos de imágenes
-│   ├── js/                # Scripts JavaScript
-│   ├── scss/              # Archivos SASS/SCSS fuente
-│   ├── mail/              # Plantillas de correo
-│   └── *.html             # Páginas HTML principales
+├── frontend/                # Frontend web
+│   ├── css/                 # Estilos CSS compilados
+│   ├── img/                 # Imágenes y recursos gráficos
+│   ├── js/                  # Scripts JavaScript
+│   ├── mail/                # Plantillas de correo electrónico
+│   └── *.html               # Páginas HTML principales
 │
-├── .gitignore             # Archivos ignorados por Git
-└── README.md              # Documentación del proyecto
+├── Documentación/           # Documentación del proyecto
+├── .gitignore               # Configuración Git
+└── README.md                # Archivo README principal
+
 ---
 
 ## 🚀 Tecnologías Utilizadas
